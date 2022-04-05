@@ -45,22 +45,28 @@ PASS exercise 5
 
 
 def exercise_1(string, substring):
+    # Returns True if the second string is `in` the first string.
     return None
 
 
 def exercise_2(message, n):
+    # Returns a list of that string with length `n`.
     return None
 
 
 def exercise_3(string):
+    # Returns the first 3 characters of a string
     return None
 
 
 def exercise_4(n):
+    # while loop that runs while n > 0
     return None
 
 
 def exercise_5(player):
+    # player is a dictionary.
+    # If the player has a "backpack" (a list), add the string "sword" to it
     return None
 
 
