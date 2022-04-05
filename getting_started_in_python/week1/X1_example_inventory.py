@@ -7,12 +7,6 @@ SUCCESS: Found sword in players inventory! {'x': 2, 'y': 2, 'inventory': [{'x': 
 SUCCESS: No sword on the map! [[None, None, None], [None, None, None], [None, None, None]]
 """
 
-# Helper function that will pick up an item underneath a player, if there is one.
-# I put this in a function because in a real game this would be reused many places.
-def pick_up_item(map, player):
-    if map[player["x"]][player["y"]]: # Does the tile under the player have anything on it? if so:
-        player["inventory"].append(map[player["x"]][player["y"]]) # put item in player's inventory
-        map[player["x"]][player["y"]] = None # remove item from the map
 
 # there must something on the map to be picked up:
 sword = {
@@ -41,7 +35,12 @@ map[sword["x"]][sword["y"]] = sword
 player["x"] = sword["x"]
 player["y"] = sword["y"]
 
-# have the player pick up the item
+# have the player pick up the item. I'm going to put that logic in a function and call it.
+def pick_up_item(map, player):
+    if map[player["x"]][player["y"]]: # Does the tile under the player have anything on it? if so:
+        player["inventory"].append(map[player["x"]][player["y"]]) # put item in player's inventory
+        map[player["x"]][player["y"]] = None # remove item from the map
+
 pick_up_item(map, player)
 
 # Check that the player now has the sword
